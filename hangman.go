@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
-	"os"
-	"os/exec"
 	"strings"
 	"time"
+
+	"github.com/inancgumus/screen"
 )
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -285,7 +285,6 @@ func contains(slice []string, item string) bool {
 }
 
 func clear() {
-	clear := exec.Command("clear")
-	clear.Stdout = os.Stdout
-	clear.Run()
+	screen.Clear()
+	screen.MoveTopLeft()
 }
